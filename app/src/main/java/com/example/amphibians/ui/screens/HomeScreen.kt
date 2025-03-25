@@ -1,8 +1,15 @@
 package com.example.amphibians.ui.screens
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -51,9 +58,7 @@ fun HomeScreen(
     }
 }
 
-/**
- * The home screen displaying the loading message.
- */
+/** The home screen displaying the loading message. */
 @Composable
 fun LoadingScreen(modifier: Modifier = Modifier) {
     Image(
@@ -63,9 +68,7 @@ fun LoadingScreen(modifier: Modifier = Modifier) {
     )
 }
 
-/**
- * The home screen displaying error message with re-attempt button.
- */
+/** The home screen displaying error message with re-attempt button. */
 @Composable
 fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
     Column(
@@ -130,9 +133,7 @@ private fun AmphibiansListScreen(
     ) {
         items(
             items = amphibians,
-            key = { amphibian ->
-                amphibian.name
-            }
+            key = { amphibian -> amphibian.name }
         ) { amphibian ->
             AmphibianCard(amphibian = amphibian, modifier = Modifier.fillMaxSize())
         }
@@ -168,9 +169,9 @@ fun AmphibiansListScreenPreview() {
                 "Lorem Ipsum - $it",
                 "$it",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do" +
-                        " eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad" +
-                        " minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip" +
-                        " ex ea commodo consequat.",
+                        " usermod temper incident ut labor et do lore magna aliquot. Ut enum ad" +
+                        " minim venial, quits nostrum excitation McCull och labors nisei ut aliquot" +
+                        " ex ea commode consequent.",
                 imgSrc = ""
             )
         }

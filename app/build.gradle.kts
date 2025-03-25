@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
 }
 
 android {
@@ -56,14 +57,13 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    // Retrofit for network requests
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.retrofit)
-    // Converter for kotlinx.serialization
-    implementation(libs.retrofit2.kotlinx.serialization.converter)
-
-    // kotlinx.serialization for JSON parsing
+    implementation(libs.converter.scalars)
     implementation(libs.kotlinx.serialization.json)
-
-    // Coil for image loading in Compose
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
+    implementation(libs.okhttp)
+    testImplementation(libs.kotlinx.coroutines.test)
     implementation(libs.coil.compose)
 }
