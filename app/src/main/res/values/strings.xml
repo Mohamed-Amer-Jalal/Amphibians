@@ -4,4 +4,9 @@
     <string name="retry">Retry</string>
     <string name="loading">Loading</string>
     <string name="amphibian_title">%s (%s)</string>
+    <string name="lorem_ipsum">Lorem Ipsum - %1$s</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_sed_do">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</string>
+    <string name="usermod_temper_incident_ut_labor_et_do_lore_magna_aliquot_ut_enum_ad">" usermod temper incident ut labor et do lore magna aliquot. Ut enum ad"</string>
+    <string name="minim_venial_quits_nostrum_excitation_mccull_och_labors_nisei_ut_aliquot">" minim venial, quits nostrum excitation McCull och labors nisei ut aliquot"</string>
+    <string name="ex_ea_commode_consequent">" ex ea commode consequent."</string>
 </resources>
