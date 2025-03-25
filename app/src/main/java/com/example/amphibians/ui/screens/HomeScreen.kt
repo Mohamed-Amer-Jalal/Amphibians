@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.amphibians.R
+import com.example.amphibians.model.Amphibian
 import com.example.amphibians.ui.theme.AmphibiansTheme
 
 @Composable
@@ -30,7 +31,7 @@ fun HomeScreen(
     amphibiansUiState: AmphibiansUiState,
     retryAction: () -> Unit,
     modifier: Modifier = Modifier,
-    contentPadding: PaddingValues = PaddingValues(0.dp)
+    contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
     when (amphibiansUiState) {
         is AmphibiansUiState.Loading -> LoadingScreen(modifier.size(200.dp))
@@ -45,6 +46,7 @@ fun HomeScreen(
                     ),
                 contentPadding = contentPadding
             )
+
         else -> ErrorScreen(retryAction, modifier)
     }
 }
@@ -119,7 +121,7 @@ fun AmphibianCard(amphibian: Amphibian, modifier: Modifier = Modifier) {
 private fun AmphibiansListScreen(
     amphibians: List<Amphibian>,
     modifier: Modifier = Modifier,
-    contentPadding: PaddingValues = PaddingValues(0.dp)
+    contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
     LazyColumn(
         modifier = modifier,
