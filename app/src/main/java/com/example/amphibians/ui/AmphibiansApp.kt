@@ -19,15 +19,18 @@ import com.example.amphibians.ui.screens.HomeScreen
 @Composable
 fun AmphibiansApp(amphibiansViewModel: AmphibiansViewModel = viewModel(factory = AmphibiansViewModel.Factory)) {
     Scaffold(
-        modifier = Modifier.fillMaxSize(), topBar = {
+        modifier = Modifier.fillMaxSize(),
+        topBar = {
             TopAppBar(
                 title = {
                     Text(
                         stringResource(R.string.app_name),
                         style = MaterialTheme.typography.headlineMedium
                     )
-                })
-        }) {
+                }
+            )
+        }
+    ) {
         Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
             HomeScreen(
                 amphibiansUiState = amphibiansViewModel.amphibiansUiState,

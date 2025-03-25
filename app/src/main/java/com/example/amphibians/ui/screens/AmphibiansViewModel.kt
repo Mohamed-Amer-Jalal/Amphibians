@@ -12,18 +12,19 @@ import com.example.amphibians.AmphibiansApplication
 import com.example.amphibians.data.AmphibiansRepository
 import com.example.amphibians.model.Amphibian
 import kotlinx.coroutines.launch
-import okio.IOException
 import retrofit2.HttpException
+import java.io.IOException
 
 /** UI state for the Home screen */
 sealed interface AmphibiansUiState {
     data class Success(val amphibians: List<Amphibian>) : AmphibiansUiState
-    data object Error : AmphibiansUiState
-    data object Loading : AmphibiansUiState
+    object Error : AmphibiansUiState
+    object Loading : AmphibiansUiState
 }
 
 /** ViewModel containing the app data and method to retrieve the data */
 class AmphibiansViewModel(private val amphibiansRepository: AmphibiansRepository) : ViewModel() {
+
     var amphibiansUiState: AmphibiansUiState by mutableStateOf(AmphibiansUiState.Loading)
         private set
 
@@ -44,6 +45,7 @@ class AmphibiansViewModel(private val amphibiansRepository: AmphibiansRepository
         }
     }
 
+    /** Factory for [AmphibiansViewModel] that takes [AmphibiansRepository] as a dependency */
     companion object {
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {

@@ -10,8 +10,8 @@ interface AmphibiansRepository {
 }
 
 /** Network Implementation of repository that retrieves amphibian data from underlying data source. */
-class DefaultAmphibiansRepository(val amphibianApiService: AmphibiansApiService) :
+class DefaultAmphibiansRepository(private val amphibiansApiService: AmphibiansApiService) :
     AmphibiansRepository {
     /** Retrieves list of amphibians from underlying data source */
-    override suspend fun getAmphibians(): List<Amphibian> = amphibianApiService.getAmphibians()
+    override suspend fun getAmphibians(): List<Amphibian> = amphibiansApiService.getAmphibians()
 }

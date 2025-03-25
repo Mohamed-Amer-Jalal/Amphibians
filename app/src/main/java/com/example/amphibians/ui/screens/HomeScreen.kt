@@ -68,7 +68,9 @@ fun LoadingScreen(modifier: Modifier = Modifier) {
     )
 }
 
-/** The home screen displaying error message with re-attempt button. */
+/**
+ * The home screen displaying error message with re-attempt button.
+ */
 @Composable
 fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
     Column(
@@ -77,18 +79,13 @@ fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(stringResource(R.string.loading_failed))
-        Button(onClick = retryAction) {
-            Text(stringResource(R.string.retry))
-        }
+        Button(onClick = retryAction) { Text(stringResource(R.string.retry)) }
     }
 }
 
 @Composable
 fun AmphibianCard(amphibian: Amphibian, modifier: Modifier = Modifier) {
-    Card(
-        modifier = modifier,
-        shape = RoundedCornerShape(8.dp)
-    ) {
+    Card(modifier = modifier, shape = RoundedCornerShape(8.dp)) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
                 text = stringResource(R.string.amphibian_title, amphibian.name, amphibian.type),
@@ -131,10 +128,7 @@ private fun AmphibiansListScreen(
         contentPadding = contentPadding,
         verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
-        items(
-            items = amphibians,
-            key = { amphibian -> amphibian.name }
-        ) { amphibian ->
+        items(items = amphibians, key = { amphibian -> amphibian.name }) { amphibian ->
             AmphibianCard(amphibian = amphibian, modifier = Modifier.fillMaxSize())
         }
     }
@@ -166,12 +160,12 @@ fun AmphibiansListScreenPreview() {
     AmphibiansTheme {
         val mockData = List(10) {
             Amphibian(
-                stringResource(R.string.lorem_ipsum, it),
+                "Lorem Ipsum - $it",
                 "$it",
-                stringResource(R.string.lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_sed_do) +
-                        stringResource(R.string.usermod_temper_incident_ut_labor_et_do_lore_magna_aliquot_ut_enum_ad) +
-                        stringResource(R.string.minim_venial_quits_nostrum_excitation_mccull_och_labors_nisei_ut_aliquot) +
-                        stringResource(R.string.ex_ea_commode_consequent),
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do" +
+                        " usermod temper incident ut labor et do lore magna aliquot. Ut enum ad" +
+                        " minim venial, quits nostrum excitation McCull och labors nisei ut aliquot" +
+                        " ex ea commode consequent.",
                 imgSrc = ""
             )
         }
