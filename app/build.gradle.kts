@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.example.amphibians"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.amphibians"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -56,4 +56,14 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    // Retrofit for network requests
+    implementation(libs.retrofit)
+    // Converter for kotlinx.serialization
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
+
+    // kotlinx.serialization for JSON parsing
+    implementation(libs.kotlinx.serialization.json)
+
+    // Coil for image loading in Compose
+    implementation(libs.coil.compose)
 }
