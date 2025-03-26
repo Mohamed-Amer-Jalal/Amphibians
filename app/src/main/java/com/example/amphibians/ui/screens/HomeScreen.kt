@@ -160,12 +160,9 @@ fun AmphibiansListScreenPreview() {
     AmphibiansTheme {
         val mockData = List(10) {
             Amphibian(
-                "Lorem Ipsum - $it",
+                stringResource(R.string.name, it),
                 "$it",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do" +
-                        " usermod temper incident ut labor et do lore magna aliquot. Ut enum ad" +
-                        " minim venial, quits nostrum excitation McCull och labors nisei ut aliquot" +
-                        " ex ea commode consequent.",
+                stringResource(R.string.description),
                 imgSrc = ""
             )
         }
