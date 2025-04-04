@@ -42,6 +42,7 @@ fun HomeScreen(
 ) {
     when (amphibiansUiState) {
         is AmphibiansUiState.Loading -> LoadingScreen(modifier.size(200.dp))
+
         is AmphibiansUiState.Success ->
             AmphibiansListScreen(
                 amphibians = amphibiansUiState.amphibians,
